@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Lumen — A modern publication exploring technology, culture, design, movement, and the human spirit.">
+  <title>Lumen — Modern Thoughts, Stories & Ideas</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+<body class="dark-theme">
+
+  <!-- Sticky Navbar -->
+  <header class="site-header">
+    <div class="container nav-container">
+      <a href="index.html" class="brand-logo">
+        <span class="brand-icon">L</span>
+        <span>Lumen<span class="gradient-text">.</span></span>
+      </a>
+
+      <nav class="nav-menu">
+        <a href="index.html" class="nav-link active">Home</a>
+        <a href="#" class="nav-link">Technology</a>
+        <a href="#" class="nav-link">Movement</a>
+        <a href="#" class="nav-link">Cinema</a>
+        <a href="#" class="nav-link">Design</a>
+      </nav>
+
+      <div class="nav-actions">
+        <!-- Search Field -->
+        <div class="search-wrapper">
+          <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+          <input type="text" class="search-input" placeholder="Search articles..." aria-label="Search articles">
+        </div>
+
+        <!-- Dark Mode Toggle Switch -->
+        <div class="theme-toggle-wrap">
+          <button id="themeToggleBtn" class="theme-toggle-btn" aria-label="Toggle theme">
+            <!-- Moon Icon (Dark Mode active) -->
+            <svg class="icon-moon" viewBox="0 0 24 24">
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+            </svg>
+            <!-- Sun Icon (Light Mode active) -->
+            <svg class="icon-sun" viewBox="0 0 24 24">
+              <circle cx="12" cy="12" r="5"></circle>
+              <line x1="12" y1="1" x2="12" y2="3" stroke="currentColor" stroke-width="2" stroke-linecap="round"></line>
+              <line x1="12" y1="21" x2="12" y2="23" stroke="currentColor" stroke-width="2" stroke-linecap="round"></line>
+              <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" stroke="currentColor" stroke-width="2" stroke-linecap="round"></line>
+              <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" stroke="currentColor" stroke-width="2" stroke-linecap="round"></line>
+              <line x1="1" y1="12" x2="3" y2="12" stroke="currentColor" stroke-width="2" stroke-linecap="round"></line>
+              <line x1="21" y1="12" x2="23" y2="12" stroke="currentColor" stroke-width="2" stroke-linecap="round"></line>
+              <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" stroke="currentColor" stroke-width="2" stroke-linecap="round"></line>
+              <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" stroke="currentColor" stroke-width="2" stroke-linecap="round"></line>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Featured Hero Article Section -->
+    <section class="hero-section">
+      <div class="container">
+        <article class="hero-card">
+          <img 
+            src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=1600&q=80" 
+            alt="Language learning and computer technology" 
+            class="hero-bg-image"
+          >
+          <div class="hero-overlay"></div>
+          
+          <div class="hero-content">
+            <span class="badge-featured">★ Featured Story</span>
+            
+            <div class="meta-group">
+              <span class="category-tag tech">Linguistics & AI</span>
+              <span>•</span>
+              <time datetime="2026-08-28">August 28, 2026</time>
+              <span>•</span>
+              <span>7 min read</span>
+            </div>
+
+            <h1 class="hero-title">
+              <a href="post.html">Building Lipi: A Global Alternative to Language Learning</a>
+            </h1>
+
+            <p class="hero-excerpt">
+              How a collective of computational linguists and neuroscientists is rethinking multilingual synthesis to eliminate the cognitive friction of foreign language acquisition.
+            </p>
+
+            <a href="post.html" class="btn-primary">
+              <span>Read Full Article</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Latest Articles Grid Section -->
+    <section class="container">
+      <div class="section-header">
+        <div>
+          <h2 class="section-title">Latest Dispatches</h2>
+          <p class="section-subtitle">Hand-crafted essays, deep dives, and expert tutorials.</p>
+        </div>
+      </div>
+
+      <!-- Category Filter Pills -->
+      <div class="filter-bar">
+        <button class="filter-pill active">All Posts</button>
+        <button class="filter-pill">Technology</button>
+        <button class="filter-pill">Fitness & Calisthenics</button>
+        <button class="filter-pill">Martial Arts & Action</button>
+        <button class="filter-pill">Design Systems</button>
+        <button class="filter-pill">Philosophy</button>
+      </div>
+
+      <!-- Responsive CSS Grid of Blog Post Cards -->
+      <div class="blog-grid" id="blogGrid">
+
+        <!-- Card 1: Mastering the Handstand -->
+        <article class="post-card">
+          <div class="card-media">
+            <span class="card-category-wrap">
+              <span class="category-tag fitness">Calisthenics</span>
+            </span>
+            <img 
+              src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&w=800&q=80" 
+              alt="Person performing a handstand balance outdoors"
+            >
+          </div>
+          <div class="card-body">
+            <div class="card-meta">
+              <time datetime="2026-08-25">August 25, 2026</time>
+              <span>•</span>
+              <span>5 min read</span>
+            </div>
+            <h3 class="card-title">
+              <a href="post.html">Mastering the Perfect Handstand in 30 Days</a>
+            </h3>
+            <p class="card-excerpt">
+              A comprehensive physical roadmap focusing on wrist conditioning, scapular elevation, and nervous system calibration to achieve effortless freestanding balance.
+            </p>
+            <div class="card-footer">
+              <div class="author-chip">
+                <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=120&q=80" alt="Elena Rostova" class="author-avatar">
+                <span class="author-name">Elena Rostova</span>
+              </div>
+              <a href="post.html" class="read-more-link">
+                <span>Read More</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 2: Michael Jai White Action Choreography -->
+        <article class="post-card">
+          <div class="card-media">
+            <span class="card-category-wrap">
+              <span class="category-tag cinema">Cinema & Martial Arts</span>
+            </span>
+            <img 
+              src="https://images.unsplash.com/photo-1555597673-b21d5c935865?auto=format&fit=crop&w=800&q=80" 
+              alt="Martial arts choreography and cinematography"
+            >
+          </div>
+          <div class="card-body">
+            <div class="card-meta">
+              <time datetime="2026-08-22">August 22, 2026</time>
+              <span>•</span>
+              <span>8 min read</span>
+            </div>
+            <h3 class="card-title">
+              <a href="post.html">Top 5 Michael Jai White Action Choreography Scenes</a>
+            </h3>
+            <p class="card-excerpt">
+              From Blood and Bone to Undisputed II, dissecting the lightning speed, authentic kyokushin technique, and cinematic rhythm of one of Hollywood's premier screen fighters.
+            </p>
+            <div class="card-footer">
+              <div class="author-chip">
+                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=120&q=80" alt="Marcus Vance" class="author-avatar">
+                <span class="author-name">Marcus Vance</span>
+              </div>
+              <a href="post.html" class="read-more-link">
+                <span>Read More</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 3: Building Lipi (Grid Card variant) -->
+        <article class="post-card">
+          <div class="card-media">
+            <span class="card-category-wrap">
+              <span class="category-tag tech">Software & AI</span>
+            </span>
+            <img 
+              src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=800&q=80" 
+              alt="Neural network code matrix"
+            >
+          </div>
+          <div class="card-body">
+            <div class="card-meta">
+              <time datetime="2026-08-19">August 19, 2026</time>
+              <span>•</span>
+              <span>6 min read</span>
+            </div>
+            <h3 class="card-title">
+              <a href="post.html">The Architecture Behind Lipi's Neural Semantic Graph</a>
+            </h3>
+            <p class="card-excerpt">
+              An engineering breakdown of how cross-lingual vector embeddings preserve idiom and emotion without requiring traditional grammar drill repetition.
+            </p>
+            <div class="card-footer">
+              <div class="author-chip">
+                <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=120&q=80" alt="Dr. Aris Thorne" class="author-avatar">
+                <span class="author-name">Dr. Aris Thorne</span>
+              </div>
+              <a href="post.html" class="read-more-link">
+                <span>Read More</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 4: Generative Design Systems -->
+        <article class="post-card">
+          <div class="card-media">
+            <span class="card-category-wrap">
+              <span class="category-tag ai">Design Systems</span>
+            </span>
+            <img 
+              src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=800&q=80" 
+              alt="Abstract organic 3D shapes and iridescent gradients"
+            >
+          </div>
+          <div class="card-body">
+            <div class="card-meta">
+              <time datetime="2026-08-16">August 16, 2026</time>
+              <span>•</span>
+              <span>4 min read</span>
+            </div>
+            <h3 class="card-title">
+              <a href="post.html">The Art of Generative UI: Beyond Traditional Component Kits</a>
+            </h3>
+            <p class="card-excerpt">
+              Moving past rigid atomic component libraries into responsive, runtime-generated interface structures that adapt to individual user behavior and ergonomics.
+            </p>
+            <div class="card-footer">
+              <div class="author-chip">
+                <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=120&q=80" alt="Sophia Chen" class="author-avatar">
+                <span class="author-name">Sophia Chen</span>
+              </div>
+              <a href="post.html" class="read-more-link">
+                <span>Read More</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 5: Mobility Protocols -->
+        <article class="post-card">
+          <div class="card-media">
+            <span class="card-category-wrap">
+              <span class="category-tag fitness">Movement</span>
+            </span>
+            <img 
+              src="https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=800&q=80" 
+              alt="Athlete performing flexibility mobility training"
+            >
+          </div>
+          <div class="card-body">
+            <div class="card-meta">
+              <time datetime="2026-08-12">August 12, 2026</time>
+              <span>•</span>
+              <span>6 min read</span>
+            </div>
+            <h3 class="card-title">
+              <a href="post.html">Joint Longevity: Daily Mobility Drills for Desk Workers</a>
+            </h3>
+            <p class="card-excerpt">
+              Combatting sedentary posture through rotational articular controls (CARS), thoracic decompression routines, and active hip opening flows.
+            </p>
+            <div class="card-footer">
+              <div class="author-chip">
+                <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=120&q=80" alt="Elena Rostova" class="author-avatar">
+                <span class="author-name">Elena Rostova</span>
+              </div>
+              <a href="post.html" class="read-more-link">
+                <span>Read More</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 6: Martial Arts Philosophy -->
+        <article class="post-card">
+          <div class="card-media">
+            <span class="card-category-wrap">
+              <span class="category-tag cinema">Cinema & Craft</span>
+            </span>
+            <img 
+              src="https://images.unsplash.com/photo-1509198397868-475647b2a1e5?auto=format&fit=crop&w=800&q=80" 
+              alt="Silhouetted martial artist at sunrise"
+            >
+          </div>
+          <div class="card-body">
+            <div class="card-meta">
+              <time datetime="2026-08-08">August 8, 2026</time>
+              <span>•</span>
+              <span>7 min read</span>
+            </div>
+            <h3 class="card-title">
+              <a href="post.html">The Anatomy of a Perfect Action Fight Scene</a>
+            </h3>
+            <p class="card-excerpt">
+              Why spatial awareness, wide camera angles, and unedited stunt timing create visceral fight scenes that fast-cut CGI movies can never match.
+            </p>
+            <div class="card-footer">
+              <div class="author-chip">
+                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=120&q=80" alt="Marcus Vance" class="author-avatar">
+                <span class="author-name">Marcus Vance</span>
+              </div>
+              <a href="post.html" class="read-more-link">
+                <span>Read More</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </article>
+
+      </div>
+
+      <!-- Interactivity Hook: Load More Button -->
+      <div class="load-more-section">
+        <button id="loadMoreBtn" class="btn-secondary">
+          <span>Load More Articles</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="6 9 12 15 18 9"></polyline>
+          </svg>
+        </button>
+      </div>
+
+      <!-- Newsletter Strip -->
+      <section class="newsletter-strip">
+        <div class="newsletter-content">
+          <h3>Stay ahead of the curve.</h3>
+          <p>Get our weekly curated digest of cutting-edge ideas in tech, movement, and human potential delivered directly to your inbox.</p>
+        </div>
+        <form class="newsletter-form" onsubmit="event.preventDefault();">
+          <input type="email" class="newsletter-input" placeholder="Enter your email address..." required aria-label="Email address">
+          <button type="submit" class="btn-primary">Subscribe</button>
+        </form>
+      </section>
+    </section>
+  </main>
+
+  <!-- Standard Footer with Social Links -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="index.html" class="brand-logo">
+            <span class="brand-icon">L</span>
+            <span>Lumen<span class="gradient-text">.</span></span>
+          </a>
+          <p>
+            An independent online magazine curating the frontier of technology, human movement, cinema, and modern design philosophies.
+          </p>
+          <div class="social-links">
+            <a href="#" class="social-icon-btn" aria-label="Twitter">
+              <svg viewBox="0 0 24 24"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg>
+            </a>
+            <a href="#" class="social-icon-btn" aria-label="GitHub">
+              <svg viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+            </a>
+            <a href="#" class="social-icon-btn" aria-label="LinkedIn">
+              <svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+            </a>
+            <a href="#" class="social-icon-btn" aria-label="YouTube">
+              <svg viewBox="0 0 24 24"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon></svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="footer-column">
+          <h4>Topics</h4>
+          <ul class="footer-links">
+            <li><a href="#">Artificial Intelligence</a></li>
+            <li><a href="#">Linguistic Models</a></li>
+            <li><a href="#">Calisthenics & Movement</a></li>
+            <li><a href="#">Action Cinema</a></li>
+            <li><a href="#">Design Ergonomics</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-column">
+          <h4>Editorial</h4>
+          <ul class="footer-links">
+            <li><a href="#">About Lumen</a></li>
+            <li><a href="#">Editorial Standards</a></li>
+            <li><a href="#">Authors & Contributors</a></li>
+            <li><a href="#">Submit a Pitch</a></li>
+            <li><a href="#">Press Kit</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-column">
+          <h4>Community</h4>
+          <ul class="footer-links">
+            <li><a href="#">Newsletter Archive</a></li>
+            <li><a href="#">Discord Server</a></li>
+            <li><a href="#">Events & Meetups</a></li>
+            <li><a href="#">Support the Journal</a></li>
+            <li><a href="#">Contact Us</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2026 Lumen Media Group. All rights reserved.</p>
+        <div class="footer-legal-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+          <a href="#">Cookie Settings</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
