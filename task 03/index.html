@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="A sleek personal expense tracker to manage your income and expenses with real-time balance summaries and transaction history." />
+  <title>ExpenseIQ — Personal Finance Tracker</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ===== HEADER ===== -->
+  <header class="app-header">
+    <div class="header-inner">
+      <div class="brand">
+        <span class="brand-icon" aria-hidden="true">💳</span>
+        <span class="brand-name">ExpenseIQ</span>
+      </div>
+      <div class="header-meta">
+        <span class="header-date" id="headerDate"></span>
+        <div class="avatar" aria-label="User avatar">AY</div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===== MAIN LAYOUT ===== -->
+  <main class="app-main">
+
+    <!-- HERO GREETING -->
+    <section class="greeting" aria-label="Dashboard greeting">
+      <h1 class="greeting-title">Good evening, Ayush 👋</h1>
+      <p class="greeting-sub">Here's your financial snapshot for August 2026</p>
+    </section>
+
+    <!-- SUMMARY CARDS -->
+    <section class="summary-grid" aria-label="Financial summary">
+
+      <article class="card card--income" id="cardIncome">
+        <div class="card-icon-wrap income-icon-bg">
+          <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/>
+            <polyline points="17 6 23 6 23 12"/>
+          </svg>
+        </div>
+        <div class="card-body">
+          <span class="card-label">Total Income</span>
+          <span class="card-amount income-text" id="totalIncome">&#8377;0.00</span>
+          <span class="card-trend income-trend">
+            <svg viewBox="0 0 12 12" fill="currentColor" aria-hidden="true"><path d="M6 2l4 4H7v4H5V6H2z"/></svg>
+            +12.4% this month
+          </span>
+        </div>
+      </article>
+
+      <article class="card card--expense" id="cardExpense">
+        <div class="card-icon-wrap expense-icon-bg">
+          <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <polyline points="23 18 13.5 8.5 8.5 13.5 1 6"/>
+            <polyline points="17 18 23 18 23 12"/>
+          </svg>
+        </div>
+        <div class="card-body">
+          <span class="card-label">Total Expenses</span>
+          <span class="card-amount expense-text" id="totalExpenses">&#8377;0.00</span>
+          <span class="card-trend expense-trend">
+            <svg viewBox="0 0 12 12" fill="currentColor" aria-hidden="true"><path d="M6 10l4-4H7V2H5v4H2z"/></svg>
+            -3.1% this month
+          </span>
+        </div>
+      </article>
+
+      <article class="card card--balance" id="cardBalance">
+        <div class="card-icon-wrap balance-icon-bg">
+          <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="12" y1="1" x2="12" y2="23"/>
+            <path d="M17 5H9.5a3.5 3.5 0 1 0 0 7h5a3.5 3.5 0 1 1 0 7H6"/>
+          </svg>
+        </div>
+        <div class="card-body">
+          <span class="card-label">Current Balance</span>
+          <span class="card-amount balance-text" id="currentBalance">&#8377;0.00</span>
+          <span class="card-trend balance-trend">Net savings position</span>
+        </div>
+      </article>
+
+    </section>
+
+    <!-- TWO-COLUMN LAYOUT -->
+    <div class="content-grid">
+
+      <!-- ADD TRANSACTION FORM -->
+      <section class="form-section" aria-label="Add transaction form">
+        <div class="section-header">
+          <h2 class="section-title">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
+            Add Transaction
+          </h2>
+        </div>
+
+        <form class="txn-form" id="transactionForm" novalidate aria-label="New transaction entry form">
+
+          <!-- Type Toggle -->
+          <fieldset class="type-toggle-group" id="typeToggleGroup">
+            <legend class="sr-only">Transaction type</legend>
+            <label class="type-toggle type-toggle--income" id="labelIncome">
+              <input type="radio" name="txnType" id="typeIncome" value="income" checked />
+              <span class="toggle-pill">
+                <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M10 3l6 6H7v8H5v-8H2z" transform="rotate(90 10 10)"/></svg>
+                Income
+              </span>
+            </label>
+            <label class="type-toggle type-toggle--expense" id="labelExpense">
+              <input type="radio" name="txnType" id="typeExpense" value="expense" />
+              <span class="toggle-pill">
+                <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M10 17l6-6H7V3H5v8H2z" transform="rotate(90 10 10)"/></svg>
+                Expense
+              </span>
+            </label>
+          </fieldset>
+
+          <!-- Amount -->
+          <div class="form-group">
+            <label class="form-label" for="inputAmount">Amount</label>
+            <div class="input-wrap currency-input-wrap">
+              <span class="currency-symbol" aria-hidden="true">&#8377;</span>
+              <input
+                type="number"
+                id="inputAmount"
+                name="amount"
+                class="form-input input-currency"
+                placeholder="0.00"
+                min="0.01"
+                step="0.01"
+                required
+                aria-required="true"
+              />
+            </div>
+            <span class="form-error" id="errorAmount" role="alert" aria-live="polite"></span>
+          </div>
+
+          <!-- Description -->
+          <div class="form-group">
+            <label class="form-label" for="inputDescription">Description</label>
+            <div class="input-wrap">
+              <svg class="input-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="17" y1="10" x2="3" y2="10"/><line x1="21" y1="6" x2="3" y2="6"/><line x1="21" y1="14" x2="3" y2="14"/><line x1="17" y1="18" x2="3" y2="18"/></svg>
+              <input
+                type="text"
+                id="inputDescription"
+                name="description"
+                class="form-input"
+                placeholder="e.g. Grocery shopping"
+                maxlength="80"
+                required
+                aria-required="true"
+              />
+            </div>
+            <span class="form-error" id="errorDescription" role="alert" aria-live="polite"></span>
+          </div>
+
+          <!-- Date -->
+          <div class="form-group">
+            <label class="form-label" for="inputDate">Date</label>
+            <div class="input-wrap">
+              <svg class="input-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+              <input
+                type="date"
+                id="inputDate"
+                name="date"
+                class="form-input"
+                required
+                aria-required="true"
+              />
+            </div>
+            <span class="form-error" id="errorDate" role="alert" aria-live="polite"></span>
+          </div>
+
+          <!-- Category -->
+          <div class="form-group">
+            <label class="form-label" for="inputCategory">Category</label>
+            <div class="input-wrap select-wrap">
+              <svg class="input-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg>
+              <select id="inputCategory" name="category" class="form-input form-select" required aria-required="true">
+                <option value="" disabled selected>Select category…</option>
+                <optgroup label="Income">
+                  <option value="salary">Salary</option>
+                  <option value="freelance">Freelance</option>
+                  <option value="investment">Investment</option>
+                  <option value="gift">Gift / Bonus</option>
+                  <option value="other-income">Other Income</option>
+                </optgroup>
+                <optgroup label="Expenses">
+                  <option value="food">Food &amp; Dining</option>
+                  <option value="transport">Transport</option>
+                  <option value="housing">Housing / Rent</option>
+                  <option value="utilities">Utilities</option>
+                  <option value="health">Health &amp; Fitness</option>
+                  <option value="entertainment">Entertainment</option>
+                  <option value="shopping">Shopping</option>
+                  <option value="education">Education</option>
+                  <option value="travel">Travel</option>
+                  <option value="other-expense">Other Expense</option>
+                </optgroup>
+              </select>
+              <svg class="select-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+            </div>
+            <span class="form-error" id="errorCategory" role="alert" aria-live="polite"></span>
+          </div>
+
+          <!-- Submit -->
+          <button type="submit" class="btn-add" id="btnAddTransaction" aria-label="Add new transaction">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
+            Add Transaction
+          </button>
+
+        </form>
+      </section>
+
+      <!-- TRANSACTION HISTORY -->
+      <section class="history-section" aria-label="Transaction history">
+        <div class="section-header history-section-header">
+          <h2 class="section-title">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+            Transaction History
+          </h2>
+          <!-- Filter -->
+          <div class="filter-wrap">
+            <label class="sr-only" for="filterCategory">Filter by category</label>
+            <div class="input-wrap select-wrap filter-select-wrap">
+              <svg class="input-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"/></svg>
+              <select id="filterCategory" class="form-input form-select filter-select" aria-label="Filter transactions by category">
+                <option value="all">All Categories</option>
+                <option value="salary">Salary</option>
+                <option value="freelance">Freelance</option>
+                <option value="investment">Investment</option>
+                <option value="gift">Gift / Bonus</option>
+                <option value="other-income">Other Income</option>
+                <option value="food">Food &amp; Dining</option>
+                <option value="transport">Transport</option>
+                <option value="housing">Housing / Rent</option>
+                <option value="utilities">Utilities</option>
+                <option value="health">Health &amp; Fitness</option>
+                <option value="entertainment">Entertainment</option>
+                <option value="shopping">Shopping</option>
+                <option value="education">Education</option>
+                <option value="travel">Travel</option>
+                <option value="other-expense">Other Expense</option>
+              </select>
+              <svg class="select-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+            </div>
+          </div>
+        </div>
+
+        <!-- Transaction List — populated dynamically by script.js -->
+        <ul class="txn-list" id="transactionList" role="list" aria-label="List of transactions"></ul>
+
+        <!-- Empty state -->
+        <div class="empty-state" id="emptyState" hidden aria-hidden="true">
+          <span class="empty-state-icon" aria-hidden="true">&#128237;</span>
+          <p class="empty-state-text">No transactions found</p>
+          <p class="empty-state-sub">Add your first transaction using the form.</p>
+        </div>
+
+      </section>
+    </div><!-- /.content-grid -->
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="app-footer">
+    <p>ExpenseIQ &copy; 2026 &mdash; Built with &#10084;&#65039; for smart finances</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
