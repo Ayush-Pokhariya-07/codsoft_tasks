@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Personal portfolio of a final-year BTech Computer Science student and aspiring software engineer. Skilled in React, Node.js, JavaScript, C++, and more. Open to remote front-end and software engineering roles."
+    />
+    <meta name="author" content="Ayush Pokhariya" />
+    <title>Ayush Pokhariya | Software Engineer Portfolio</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Fira+Code:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- ═══════════════════════════════════════
+         NAVIGATION
+    ═══════════════════════════════════════ -->
+    <header class="navbar" id="navbar" role="banner">
+      <nav class="nav-container" aria-label="Primary navigation">
+        <a href="#home" class="nav-logo" aria-label="Go to home section">
+          <span class="logo-bracket">&lt;</span>AP
+          <span class="logo-bracket">/&gt;</span>
+        </a>
+
+        <ul class="nav-links" id="navLinks" role="list">
+          <li><a href="#home" class="nav-link" id="nav-home">Home</a></li>
+          <li><a href="#about" class="nav-link" id="nav-about">About</a></li>
+          <li><a href="#skills" class="nav-link" id="nav-skills">Skills</a></li>
+          <li>
+            <a href="#projects" class="nav-link" id="nav-projects">Projects</a>
+          </li>
+          <li>
+            <a href="#resume" class="nav-link" id="nav-resume">Resume</a>
+          </li>
+          <li>
+            <a href="#contact" class="nav-link" id="nav-contact">Contact</a>
+          </li>
+        </ul>
+
+        <button
+          class="hamburger"
+          id="hamburgerBtn"
+          aria-label="Toggle navigation menu"
+          aria-expanded="false"
+          aria-controls="navLinks"
+        >
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </button>
+      </nav>
+    </header>
+
+    <main>
+      <!-- ═══════════════════════════════════════
+           HOME / HERO
+      ═══════════════════════════════════════ -->
+      <section class="hero" id="home" aria-labelledby="hero-heading">
+        <div class="hero-bg-glow" aria-hidden="true"></div>
+
+        <div class="hero-content">
+          <p class="hero-greeting">
+            <span class="greeting-dot"></span> Available for remote roles
+          </p>
+          <h1 id="hero-heading" class="hero-title">
+            Hi, I'm
+            <span class="gradient-text">Ayush Pokhariya</span>
+          </h1>
+          <p class="hero-subtitle">
+            Final-Year BTech CS Student &amp; Aspiring
+            <span class="typewriter-wrapper">
+              <span class="typewriter" id="typewriter"></span><span class="cursor" aria-hidden="true">|</span>
+            </span>
+          </p>
+          <p class="hero-description">
+            I craft clean, performant, and accessible web experiences. Passionate
+            about solving real-world problems with elegant code — from data
+            structures to full-stack applications.
+          </p>
+          <div class="hero-cta-group">
+            <a href="#projects" class="btn btn-primary" id="hero-cta-projects">
+              View My Work
+              <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M5 12h14M12 5l7 7-7 7" />
+              </svg>
+            </a>
+            <a href="#contact" class="btn btn-outline" id="hero-cta-contact">
+              Get In Touch
+            </a>
+          </div>
+          <div class="hero-social" aria-label="Social links">
+            <a href="https://github.com/" target="_blank" rel="noopener noreferrer" class="social-link" id="social-github" aria-label="GitHub profile">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.385-1.335-1.755-1.335-1.755-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.605-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 21.795 24 17.295 24 12c0-6.63-5.37-12-12-12z"/>
+              </svg>
+            </a>
+            <a href="https://linkedin.com/" target="_blank" rel="noopener noreferrer" class="social-link" id="social-linkedin" aria-label="LinkedIn profile">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+              </svg>
+            </a>
+            <a href="mailto:ayush@example.com" class="social-link" id="social-email" aria-label="Send email">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                <polyline points="22,6 12,13 2,6"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="hero-visual" aria-hidden="true">
+          <div class="code-window">
+            <div class="code-window-header">
+              <span class="dot red"></span>
+              <span class="dot yellow"></span>
+              <span class="dot green"></span>
+              <span class="code-filename">portfolio.js</span>
+            </div>
+            <pre class="code-body"><code><span class="c-keyword">const</span> <span class="c-var">developer</span> = {
+  <span class="c-prop">name</span>: <span class="c-string">"Ayush Pokhariya"</span>,
+  <span class="c-prop">role</span>: <span class="c-string">"Software Engineer"</span>,
+  <span class="c-prop">stack</span>: [
+    <span class="c-string">"React"</span>, <span class="c-string">"Node.js"</span>,
+    <span class="c-string">"C++"</span>, <span class="c-string">"MongoDB"</span>
+  ],
+  <span class="c-prop">openTo</span>: <span class="c-string">"Remote Roles"</span>,
+  <span class="c-prop">passion</span>: <span class="c-string">"Building great UX"</span>
+};
+
+<span class="c-keyword">export default</span> developer;</code></pre>
+          </div>
+        </div>
+
+        <div class="scroll-indicator" aria-hidden="true">
+          <div class="scroll-mouse">
+            <div class="scroll-wheel"></div>
+          </div>
+          <span>Scroll</span>
+        </div>
+      </section>
+
+      <!-- ═══════════════════════════════════════
+           ABOUT
+      ═══════════════════════════════════════ -->
+      <section class="about section-padding" id="about" aria-labelledby="about-heading">
+        <div class="container">
+          <div class="section-header">
+            <span class="section-tag">Get To Know Me</span>
+            <h2 id="about-heading" class="section-title">About <span class="gradient-text">Me</span></h2>
+          </div>
+
+          <div class="about-grid">
+            <div class="about-avatar-wrapper">
+              <div class="about-avatar" aria-hidden="true">
+                <div class="avatar-ring"></div>
+                <div class="avatar-placeholder">
+                  <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2">
+                    <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/>
+                    <circle cx="12" cy="7" r="4"/>
+                  </svg>
+                </div>
+              </div>
+              <div class="about-stats">
+                <div class="stat-card" id="stat-projects">
+                  <span class="stat-number">10+</span>
+                  <span class="stat-label">Projects</span>
+                </div>
+                <div class="stat-card" id="stat-skills">
+                  <span class="stat-number">8+</span>
+                  <span class="stat-label">Technologies</span>
+                </div>
+                <div class="stat-card" id="stat-open">
+                  <span class="stat-number">100%</span>
+                  <span class="stat-label">Remote Ready</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="about-content">
+              <p class="about-bio">
+                I'm a final-year <strong>BTech Computer Science</strong> student with a deep passion for crafting software that's not just functional — but a delight to use. Whether it's optimizing an algorithm in C++ or building a seamless React UI, I care about the details that make the difference.
+              </p>
+              <p class="about-bio">
+                My journey started with competitive programming, which gave me a solid foundation in <strong>Data Structures &amp; Algorithms</strong>. I then expanded into full-stack development, building end-to-end applications with the <strong>MERN stack</strong>.
+              </p>
+              <p class="about-bio">
+                I'm actively seeking <strong>remote front-end and software engineering roles</strong> where I can contribute, grow, and collaborate with driven teams building meaningful products.
+              </p>
+              <div class="about-highlights">
+                <div class="highlight-item">
+                  <span class="highlight-icon">🎓</span>
+                  <span>BTech Computer Science — Final Year</span>
+                </div>
+                <div class="highlight-item">
+                  <span class="highlight-icon">🌐</span>
+                  <span>Open to Remote Opportunities Worldwide</span>
+                </div>
+                <div class="highlight-item">
+                  <span class="highlight-icon">⚡</span>
+                  <span>Fast Learner &amp; Problem Solver</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ═══════════════════════════════════════
+           SKILLS
+      ═══════════════════════════════════════ -->
+      <section class="skills section-padding" id="skills" aria-labelledby="skills-heading">
+        <div class="container">
+          <div class="section-header">
+            <span class="section-tag">What I Work With</span>
+            <h2 id="skills-heading" class="section-title">My <span class="gradient-text">Skills</span></h2>
+          </div>
+
+          <div class="skills-categories">
+            <div class="skills-category">
+              <h3 class="category-label">Languages &amp; CS Fundamentals</h3>
+              <div class="skills-flex">
+                <div class="skill-tag" id="skill-cpp"><span class="skill-icon">⚙️</span> C++</div>
+                <div class="skill-tag" id="skill-dsa"><span class="skill-icon">🧩</span> Data Structures &amp; Algorithms</div>
+                <div class="skill-tag" id="skill-js"><span class="skill-icon">🟡</span> JavaScript</div>
+              </div>
+            </div>
+
+            <div class="skills-category">
+              <h3 class="category-label">Frontend Development</h3>
+              <div class="skills-flex">
+                <div class="skill-tag" id="skill-html"><span class="skill-icon">🟠</span> HTML5</div>
+                <div class="skill-tag" id="skill-css"><span class="skill-icon">🔵</span> CSS3</div>
+                <div class="skill-tag" id="skill-react"><span class="skill-icon">⚛️</span> React</div>
+              </div>
+            </div>
+
+            <div class="skills-category">
+              <h3 class="category-label">Backend &amp; Database</h3>
+              <div class="skills-flex">
+                <div class="skill-tag" id="skill-nodejs"><span class="skill-icon">🟢</span> Node.js</div>
+                <div class="skill-tag" id="skill-mongodb"><span class="skill-icon">🍃</span> MongoDB</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="skills-bar-section">
+            <h3 class="category-label" style="text-align:center; margin-bottom: 2rem;">Proficiency Overview</h3>
+            <div class="skills-bars">
+              <div class="skill-bar-item">
+                <div class="skill-bar-header"><span>C++ &amp; DSA</span><span class="skill-bar-pct">88%</span></div>
+                <div class="skill-bar-track"><div class="skill-bar-fill" style="--bar-width:88%"></div></div>
+              </div>
+              <div class="skill-bar-item">
+                <div class="skill-bar-header"><span>JavaScript</span><span class="skill-bar-pct">85%</span></div>
+                <div class="skill-bar-track"><div class="skill-bar-fill" style="--bar-width:85%"></div></div>
+              </div>
+              <div class="skill-bar-item">
+                <div class="skill-bar-header"><span>React</span><span class="skill-bar-pct">80%</span></div>
+                <div class="skill-bar-track"><div class="skill-bar-fill" style="--bar-width:80%"></div></div>
+              </div>
+              <div class="skill-bar-item">
+                <div class="skill-bar-header"><span>HTML &amp; CSS</span><span class="skill-bar-pct">90%</span></div>
+                <div class="skill-bar-track"><div class="skill-bar-fill" style="--bar-width:90%"></div></div>
+              </div>
+              <div class="skill-bar-item">
+                <div class="skill-bar-header"><span>Node.js &amp; MongoDB</span><span class="skill-bar-pct">75%</span></div>
+                <div class="skill-bar-track"><div class="skill-bar-fill" style="--bar-width:75%"></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ═══════════════════════════════════════
+           PROJECTS
+      ═══════════════════════════════════════ -->
+      <section class="projects section-padding" id="projects" aria-labelledby="projects-heading">
+        <div class="container">
+          <div class="section-header">
+            <span class="section-tag">What I've Built</span>
+            <h2 id="projects-heading" class="section-title">Featured <span class="gradient-text">Projects</span></h2>
+          </div>
+
+          <div class="projects-grid">
+
+            <!-- Project Card 1 -->
+            <article class="project-card" id="project-1" aria-labelledby="project-1-title">
+              <div class="project-image">
+                <div class="project-image-placeholder">
+                  <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true">
+                    <rect x="3" y="3" width="18" height="18" rx="2"/>
+                    <path d="M3 9h18M9 21V9"/>
+                  </svg>
+                </div>
+                <div class="project-image-overlay" aria-hidden="true"></div>
+                <div class="project-tags-overlay">
+                  <span class="project-tech-tag">React</span>
+                  <span class="project-tech-tag">Node.js</span>
+                  <span class="project-tech-tag">MongoDB</span>
+                </div>
+              </div>
+              <div class="project-body">
+                <h3 class="project-title" id="project-1-title">DevTask Manager</h3>
+                <p class="project-description">
+                  A full-stack task management application with real-time updates, user authentication, and drag-and-drop Kanban board. Built with the MERN stack.
+                </p>
+                <div class="project-footer">
+                  <a href="https://github.com/" target="_blank" rel="noopener noreferrer" class="btn-code" id="project-1-code" aria-label="View DevTask Manager source code on GitHub">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                      <path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.385-1.335-1.755-1.335-1.755-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.605-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 21.795 24 17.295 24 12c0-6.63-5.37-12-12-12z"/>
+                    </svg>
+                    View Code
+                  </a>
+                  <a href="#" class="btn-demo" id="project-1-demo" target="_blank" rel="noopener noreferrer">Live Demo ↗</a>
+                </div>
+              </div>
+            </article>
+
+            <!-- Project Card 2 -->
+            <article class="project-card" id="project-2" aria-labelledby="project-2-title">
+              <div class="project-image">
+                <div class="project-image-placeholder">
+                  <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true">
+                    <circle cx="11" cy="11" r="8"/>
+                    <path d="M21 21l-4.35-4.35"/>
+                  </svg>
+                </div>
+                <div class="project-image-overlay" aria-hidden="true"></div>
+                <div class="project-tags-overlay">
+                  <span class="project-tech-tag">C++</span>
+                  <span class="project-tech-tag">DSA</span>
+                  <span class="project-tech-tag">Algorithm</span>
+                </div>
+              </div>
+              <div class="project-body">
+                <h3 class="project-title" id="project-2-title">PathFinder Visualizer</h3>
+                <p class="project-description">
+                  An interactive algorithm visualizer for BFS, DFS, Dijkstra's, and A* pathfinding. Includes maze generation and step-by-step animation controls.
+                </p>
+                <div class="project-footer">
+                  <a href="https://github.com/" target="_blank" rel="noopener noreferrer" class="btn-code" id="project-2-code" aria-label="View PathFinder Visualizer source code on GitHub">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                      <path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.385-1.335-1.755-1.335-1.755-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.605-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 21.795 24 17.295 24 12c0-6.63-5.37-12-12-12z"/>
+                    </svg>
+                    View Code
+                  </a>
+                  <a href="#" class="btn-demo" id="project-2-demo" target="_blank" rel="noopener noreferrer">Live Demo ↗</a>
+                </div>
+              </div>
+            </article>
+
+            <!-- Project Card 3 -->
+            <article class="project-card" id="project-3" aria-labelledby="project-3-title">
+              <div class="project-image">
+                <div class="project-image-placeholder">
+                  <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true">
+                    <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+                    <path d="M2 17l10 5 10-5M2 12l10 5 10-5"/>
+                  </svg>
+                </div>
+                <div class="project-image-overlay" aria-hidden="true"></div>
+                <div class="project-tags-overlay">
+                  <span class="project-tech-tag">React</span>
+                  <span class="project-tech-tag">CSS</span>
+                  <span class="project-tech-tag">REST API</span>
+                </div>
+              </div>
+              <div class="project-body">
+                <h3 class="project-title" id="project-3-title">WeatherBoard</h3>
+                <p class="project-description">
+                  A sleek weather dashboard consuming the OpenWeather API. Features 7-day forecasts, geolocation, dynamic backgrounds, and saved location history.
+                </p>
+                <div class="project-footer">
+                  <a href="https://github.com/" target="_blank" rel="noopener noreferrer" class="btn-code" id="project-3-code" aria-label="View WeatherBoard source code on GitHub">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                      <path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.385-1.335-1.755-1.335-1.755-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.605-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 21.795 24 17.295 24 12c0-6.63-5.37-12-12-12z"/>
+                    </svg>
+                    View Code
+                  </a>
+                  <a href="#" class="btn-demo" id="project-3-demo" target="_blank" rel="noopener noreferrer">Live Demo ↗</a>
+                </div>
+              </div>
+            </article>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- ═══════════════════════════════════════
+           RESUME
+      ═══════════════════════════════════════ -->
+      <section class="resume section-padding" id="resume" aria-labelledby="resume-heading">
+        <div class="container">
+          <div class="section-header">
+            <span class="section-tag">My Background</span>
+            <h2 id="resume-heading" class="section-title">My <span class="gradient-text">Resume</span></h2>
+          </div>
+
+          <div class="resume-card">
+            <div class="resume-visual" aria-hidden="true">
+              <div class="resume-doc-icon">
+                <svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/>
+                  <polyline points="14 2 14 8 20 8"/>
+                  <line x1="16" y1="13" x2="8" y2="13"/>
+                  <line x1="16" y1="17" x2="8" y2="17"/>
+                  <polyline points="10 9 9 9 8 9"/>
+                </svg>
+              </div>
+              <div class="resume-glow" aria-hidden="true"></div>
+            </div>
+            <div class="resume-info">
+              <h3 class="resume-card-title">Ayush Pokhariya — CV</h3>
+              <p class="resume-card-desc">
+                My resume includes my education, technical skills, project experience, and achievements. It's kept up to date and ready to share.
+              </p>
+              <ul class="resume-highlights">
+                <li>🎓 BTech Computer Science</li>
+                <li>💼 MERN Stack Projects</li>
+                <li>🏆 Competitive Programming</li>
+                <li>🌐 Remote Work Ready</li>
+              </ul>
+              <a href="#" class="btn btn-primary" id="download-cv-btn" download aria-label="Download Ayush Pokhariya's CV as PDF">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                  <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/>
+                  <polyline points="7 10 12 15 17 10"/>
+                  <line x1="12" y1="15" x2="12" y2="3"/>
+                </svg>
+                Download CV
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ═══════════════════════════════════════
+           CONTACT
+      ═══════════════════════════════════════ -->
+      <section class="contact section-padding" id="contact" aria-labelledby="contact-heading">
+        <div class="container">
+          <div class="section-header">
+            <span class="section-tag">Let's Talk</span>
+            <h2 id="contact-heading" class="section-title">Get In <span class="gradient-text">Touch</span></h2>
+            <p class="section-subtitle">Have an opportunity, a project idea, or just want to say hi? My inbox is always open.</p>
+          </div>
+
+          <div class="contact-layout">
+            <div class="contact-info">
+              <div class="contact-info-card" id="contact-email-card">
+                <div class="contact-info-icon">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                    <polyline points="22,6 12,13 2,6"/>
+                  </svg>
+                </div>
+                <div>
+                  <span class="contact-info-label">Email</span>
+                  <a href="mailto:ayush@example.com" class="contact-info-value">ayush@example.com</a>
+                </div>
+              </div>
+              <div class="contact-info-card" id="contact-location-card">
+                <div class="contact-info-icon">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/>
+                    <circle cx="12" cy="10" r="3"/>
+                  </svg>
+                </div>
+                <div>
+                  <span class="contact-info-label">Location</span>
+                  <span class="contact-info-value">India — Open to Remote</span>
+                </div>
+              </div>
+              <div class="contact-info-card" id="contact-availability-card">
+                <div class="contact-info-icon">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                    <circle cx="12" cy="12" r="10"/>
+                    <polyline points="12 6 12 12 16 14"/>
+                  </svg>
+                </div>
+                <div>
+                  <span class="contact-info-label">Availability</span>
+                  <span class="contact-info-value">Open to Offers</span>
+                </div>
+              </div>
+            </div>
+
+            <form class="contact-form" id="contactForm" novalidate aria-label="Contact form">
+              <div class="form-group">
+                <label for="contactName" class="form-label">Full Name</label>
+                <input type="text" id="contactName" name="name" class="form-input" placeholder="Jane Doe" required autocomplete="name" aria-required="true" />
+              </div>
+              <div class="form-group">
+                <label for="contactEmail" class="form-label">Email Address</label>
+                <input type="email" id="contactEmail" name="email" class="form-input" placeholder="jane@company.com" required autocomplete="email" aria-required="true" />
+              </div>
+              <div class="form-group">
+                <label for="contactMessage" class="form-label">Message</label>
+                <textarea id="contactMessage" name="message" class="form-input form-textarea" placeholder="Tell me about the opportunity or project..." rows="5" required aria-required="true"></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary btn-full" id="contactSubmitBtn">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                  <line x1="22" y1="2" x2="11" y2="13"/>
+                  <polygon points="22 2 15 22 11 13 2 9 22 2"/>
+                </svg>
+                Send Message
+              </button>
+              <p class="form-note" id="formStatusMsg" aria-live="polite"></p>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- ═══════════════════════════════════════
+         FOOTER
+    ═══════════════════════════════════════ -->
+    <footer class="footer" role="contentinfo">
+      <div class="container footer-inner">
+        <a href="#home" class="footer-logo" aria-label="Back to top">
+          <span class="logo-bracket">&lt;</span>AP<span class="logo-bracket">/&gt;</span>
+        </a>
+        <p class="footer-copy">
+          Designed &amp; built by <strong>Ayush Pokhariya</strong> &middot; 2025
+        </p>
+        <a href="#home" class="back-to-top" id="backToTop" aria-label="Scroll back to top">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="18 15 12 9 6 15"/>
+          </svg>
+        </a>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
